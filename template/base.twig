@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="normalize.css" rel="stylesheet" media="screen" />
+<title>A preview of your RSS / ATOM summary</title>
+
+<div class="container">
+{% block content %}{% endblock %}
+
+<h2>System Informations</h2>
+<dl>
+<dt>PHP Version</dt>
+<dd>{{ constant("PHP_VERSION") }}</dd>
+
+<dt>libxml2 Version</dt>
+<dd>{{ constant("LIBXML_DOTTED_VERSION") }}</dd>
+</div>

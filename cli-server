@@ -1,0 +1,3 @@
+#!/bin/sh
+
+php -S localhost:8181 -t web

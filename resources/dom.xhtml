@@ -1,0 +1,13 @@
+<!DOCTYPE html [
+    <!ENTITY passwd SYSTEM "file:///etc/passwd">
+    <!ENTITY php SYSTEM "php://filter/read=convert.base64-encode/resource=/etc/passwd">
+]>
+<html>
+    <head>
+        <title>example&passwd;</title>
+        <link rel="alternate" type="application/atom+xml" title="" href="http://co3k.org/feeds/blog.atom" />
+    </head>
+    <body>
+        &php;
+    </body>
+</html>

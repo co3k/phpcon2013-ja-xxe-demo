@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<h1>Summary of {{ blog_title }}</h1>
+<ul>
+{% for summary in summaries %}
+<li>{{ summary | nl2br }}</li>
+{% endfor %}
+</ul>
+<h2>A full content of this feed</h2>
+<pre class="pre-scrollable">
+{{ content }}
+</pre>
+<p><a href="/">Retry</a></p>
+{% endblock %}
