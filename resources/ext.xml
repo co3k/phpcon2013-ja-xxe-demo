@@ -1,0 +1,17 @@
+<!DOCTYPE feed [
+ <!ENTITY include SYSTEM "include.xml">
+]>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <updated>2013-06-24T11:56:27+09:00</updated>
+    <id>example</id>
+    <entry>
+      <title>example &include;</title>
+      <link href="http://example.com/" />
+      <id>http://example.com/1</id>
+      <updated>2013-06-26T11:56:27+09:00</updated>
+      <summary>...</summary>
+      <author>
+        <name>example</name>
+      </author>
+    </entry>
+</feed>

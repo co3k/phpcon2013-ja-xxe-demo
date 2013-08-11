@@ -2,9 +2,9 @@
 <!DOCTYPE feed [
  <!ENTITY a0 "bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!bomb!">
 <?php for ($i = 0; $i < 10; $i++): ?>
- <!ENTITY a<?php echo $i + 1 ?> "<?php echo str_repeat('&a'.$i.';', 10) ?>">
+ <!ENTITY a<?php echo $i + 1 ?> "<?php echo str_repeat('&a'.$i.';', 20) ?>">
 <?php endfor; ?>
- <!ENTITY bomb "&a10;&a10;">
+ <!ENTITY bomb "&a10;&a10;&a10;&a10;&a10;&a10;&a10;&a10;&a10;&a10;&a10;&a10;&a10;&a10;">
 ]>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>example</title>
