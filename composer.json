@@ -3,6 +3,7 @@
         "guzzle/guzzle" : "v3.7.1",
         "twig/twig": "v1.13.1",
         "symfony/http-foundation": "v2.2.4",
-        "symfony/validator": "v2.2.4"
+        "symfony/validator": "v2.2.4",
+        "aws/aws-sdk-php": "2.4.6"
     }
 }

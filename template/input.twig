@@ -5,4 +5,8 @@
 <form action="/" method="POST">
 URL: <input name="url" type="text" /> <input type="submit" />
 </form>
+
+{% if logo %}
+<p><img src="data:image/jpg;base64,{{ logo }}" /></p>
+{% endif %}
 {% endblock %}

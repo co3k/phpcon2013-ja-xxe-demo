@@ -9,8 +9,24 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request, Symfony\Component\HttpFoundation\Response,
-    Symfony\Component\Validator\Validation, Symfony\Component\Validator\Constraints, Guzzle\Http\Client
+    Symfony\Component\Validator\Validation, Symfony\Component\Validator\Constraints, Guzzle\Http\Client,
+    Aws\S3\S3Client
 ;
+
+$logo = '';
+
+if (is_file(__DIR__.'/../config.php')) {
+    require_once __DIR__.'/../config.php';
+
+    $s3 = S3Client::factory($config);
+    $s3->registerStreamWrapper();
+
+    try {
+        $logo = base64_encode(file_get_contents('s3://phpcon/ebihara-150x150.jpg'));
+    } catch (Exception $e) {
+        // do nothing
+    }
+}
 
 $request = Request::createFromGlobals();
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../template');
@@ -57,10 +73,12 @@ $fetch = function ($url) {
 /**
  * Handles request and generates response body
  */
-$controller = function ($request, $twig) use ($validate, $fetch) {
+$controller = function ($request, $twig, $logo) use ($validate, $fetch) {
     if ('POST' !== $request->getMethod()) {
         // Display input interface
-        return $twig->render('input.twig');
+        return $twig->render('input.twig', [
+            'logo' => $logo,
+        ]);
     }
 
     // Retrive url parameter and validate it
@@ -104,7 +122,7 @@ $response = new Response();
 $response->prepare($request);
 
 try {
-    $response->setContent($controller($request, $twig));
+    $response->setContent($controller($request, $twig, $logo));
 } catch (Exception $e) {
     $libxmlErrors = libxml_get_errors();
     $libxmlMessages = '';
